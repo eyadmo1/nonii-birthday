@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Nonii ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #54202e, #1b080f 75%);
+  color: #fff0f4;
+  font-family: Georgia, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-x: hidden;
+  padding: 25px;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  padding: 35px 22px;
+  border: 1px solid #a65b70;
+  border-radius: 25px;
+  background: rgba(255, 220, 230, 0.07);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 45px #e8799630;
+}
+
+h1 {
+  color: #ffb6ca;
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  color: #eac3cf;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.envelope {
+  font-size: 100px;
+  cursor: pointer;
+  margin: 25px 0;
+  animation: float 2s infinite ease-in-out;
+  border: none;
+  background: none;
+}
+
+@keyframes float {
+  50% { transform: translateY(-12px); }
+}
+
+button {
+  background: linear-gradient(135deg, #ff9bb5, #bd526f);
+  border: none;
+  border-radius: 30px;
+  padding: 14px 28px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px #ff8ca855;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#letter {
+  display: none;
+  margin-top: 30px;
+  animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message {
+  line-height: 1.9;
+  color: #ffe2ea;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.counter {
+  margin-top: 30px;
+  padding: 20px 10px;
+  border-radius: 18px;
+  background: #ffffff12;
+}
+
+.counter h2 {
+  color: #ffb6ca;
+  margin-bottom: 15px;
+}
+
+.time {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.time div {
+  background: #ffffff12;
+  border-radius: 12px;
+  padding: 12px 3px;
+}
+
+.time strong {
+  display: block;
+  font-size: 25px;
+  color: #ffb6ca;
+}
+
+.time span {
+  font-size: 11px;
+  color: #eac3cf;
+}
+
+.footer {
+  margin-top: 30px;
+  color: #dca8b8;
+  font-size: 13px;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  color: #ff9bb5;
+  opacity: .5;
+  animation: rise 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>For My Nonii ❤️</h1>
+
+  <p class="subtitle">
+    A little surprise, made with all my love.
+  </p>
+
+  <div id="welcome">
+    <button class="envelope" onclick="openLetter()">
+      💌
+    </button>
+
+    <p>Someone has a special message for you...</p>
+
+    <br>
+
+    <button onclick="openLetter()">
+      Open Your Letter ❤️
+    </button>
+  </div>
+
+  <div id="letter">
+
+    <h1>My Dearest Nonii</h1>
+
+    <p class="message">
+      Happy Birthday, my love! ❤️
+      <br><br>
+      I don't know how to put all my feelings into words,
+      but I want you to know how special you are to me.
+      <br><br>
+      Every moment with you means something to me.
+      You make ordinary days feel extraordinary,
+      and I'm so grateful that our paths crossed.
+      <br><br>
+      I hope this new year of your life brings you
+      endless happiness, beautiful memories,
+      and everything your heart wishes for.
+      <br><br>
+      I hope I get to be part of all those memories.
+      <br><br>
+      You deserve the whole world, Nonii.
+      Never forget how special you are.
+      <br><br>
+      Forever your Eyad. ❤️
+    </p>
+
+    <div class="counter">
+      <h2>Our Little Story ❤️</h2>
+      <p>Together since October 4, 2026</p>
+
+      <br>
+
+      <div class="time">
+        <div>
+          <strong id="days">0</strong>
+          <span>Days</span>
+        </div>
+
+        <div>
+          <strong id="hours">0</strong>
+          <span>Hours</span>
+        </div>
+
+        <div>
+          <strong id="minutes">0</strong>
+          <span>Minutes</span>
+        </div>
+
+        <div>
+          <strong id="seconds">0</strong>
+          <span>Seconds</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer">
+      Made with love by Eyad ❤️
+      <br><br>
+      And this is just the beginning...
+    </p>
+
+  </div>
+
+</div>
+
+<script>
+function openLetter() {
+  document.getElementById("welcome").style.display = "none";
+  document.getElementById("letter").style.display = "block";
+}
+
+function updateCounter() {
+  const startDate = new Date("2026-10-04T00:00:00");
+  const now = new Date();
+
+  let difference = Math.max(0, now - startDate);
+
+  const days = Math.floor(difference / 86400000);
+  const hours = Math.floor((difference % 86400000) / 3600000);
+  const minutes = Math.floor((difference % 3600000) / 60000);
+  const seconds = Math.floor((difference % 60000) / 1000);
+
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
+}
+
+updateCounter();
+setInterval(updateCounter, 1000);
+
+// Floating hearts
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.textContent = "♥";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (12 + Math.random() * 20) + "px";
+  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 10000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
