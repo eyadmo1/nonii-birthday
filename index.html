@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Nonii ❤️</title>
+<title>A Little World For Nonii ♡</title>
 
 <style>
 * {
@@ -15,7 +14,7 @@
 
 body {
   min-height: 100vh;
-  background: radial-gradient(circle at top, #54202e, #1b080f 75%);
+  background: radial-gradient(circle at 50% 20%, #642638, #260d19 65%, #10060b);
   color: #fff0f4;
   font-family: Georgia, serif;
   display: flex;
@@ -23,7 +22,7 @@ body {
   align-items: center;
   text-align: center;
   overflow-x: hidden;
-  padding: 25px;
+  padding: 20px;
 }
 
 .container {
@@ -32,60 +31,91 @@ body {
   padding: 35px 22px;
   border: 1px solid #a65b70;
   border-radius: 25px;
-  background: rgba(255, 220, 230, 0.07);
+  background: rgba(255, 220, 230, 0.06);
   backdrop-filter: blur(12px);
-  box-shadow: 0 0 45px #e8799630;
+  box-shadow: 0 0 55px #e8799630;
+  position: relative;
+  z-index: 2;
+}
+
+#intro {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 2s ease;
+}
+
+.small-text {
+  color: #e5b3c2;
+  letter-spacing: 4px;
+  font-size: 11px;
+  margin-bottom: 30px;
+  animation: appear 2s ease;
+}
+
+.intro-title {
+  color: #ffd0df;
+  font-size: clamp(38px, 10vw, 52px);
+  margin-bottom: 18px;
+  text-shadow: 0 0 25px #ff9bb566;
+  animation: appear 2.5s ease;
+}
+
+.intro-subtitle {
+  color: #f0cbd6;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  animation: appear 3s ease;
+}
+
+.heart-icon {
+  font-size: 55px;
+  margin-bottom: 25px;
+  animation: heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+  50% { transform: scale(1.2); }
+}
+
+.main-button {
+  background: linear-gradient(135deg, #ffb2c7, #a83d5d);
+  border: 1px solid #ffd1df;
+  border-radius: 35px;
+  padding: 16px 28px;
+  color: white;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 0 25px #ff8ca855;
+  transition: .4s;
+}
+
+.main-button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 35px #ff8ca899;
+}
+
+.signature {
+  margin-top: 35px;
+  color: #c994a5;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+#letter {
+  display: none;
+  margin-top: 10px;
+  animation: appear 1.5s ease;
 }
 
 h1 {
   color: #ffb6ca;
   font-size: 35px;
   margin-bottom: 15px;
-}
-
-.subtitle {
-  color: #eac3cf;
-  margin-bottom: 30px;
-  font-size: 15px;
-}
-
-.envelope {
-  font-size: 100px;
-  cursor: pointer;
-  margin: 25px 0;
-  animation: float 2s infinite ease-in-out;
-  border: none;
-  background: none;
-}
-
-@keyframes float {
-  50% { transform: translateY(-12px); }
-}
-
-button {
-  background: linear-gradient(135deg, #ff9bb5, #bd526f);
-  border: none;
-  border-radius: 30px;
-  padding: 14px 28px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 5px 20px #ff8ca855;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-
-#letter {
-  display: none;
-  margin-top: 30px;
-  animation: appear 1.2s ease;
-}
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .message {
@@ -141,8 +171,9 @@ button:hover {
   bottom: -30px;
   color: #ff9bb5;
   opacity: .5;
-  animation: rise 7s linear infinite;
+  animation: rise 7s linear forwards;
   pointer-events: none;
+  z-index: 1;
 }
 
 @keyframes rise {
@@ -151,6 +182,22 @@ button:hover {
     opacity: 0;
   }
 }
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 </style>
 </head>
 
@@ -158,29 +205,31 @@ button:hover {
 
 <div class="container">
 
-  <h1>For My Nonii ❤️</h1>
+  <div id="intro">
 
-  <p class="subtitle">
-    A little surprise, made with all my love.
-  </p>
+    <p class="small-text">A SPECIAL SURPRISE FOR YOU</p>
 
-  <div id="welcome">
-    <button class="envelope" onclick="openLetter()">
-      💌
+    <div class="heart-icon">♡</div>
+
+    <h1 class="intro-title">Hey, Nonii...</h1>
+
+    <p class="intro-subtitle">
+      A little surprise awaits you.
+      <br>
+      Someone made something special just for you.
+    </p>
+
+    <button class="main-button" onclick="openLetter()">
+      UNLOCK YOUR SURPRISE ♡
     </button>
 
-    <p>Someone has a special message for you...</p>
+    <p class="signature">WITH LOVE, EYAD</p>
 
-    <br>
-
-    <button onclick="openLetter()">
-      Open Your Letter ❤️
-    </button>
   </div>
 
   <div id="letter">
 
-    <h1>My Dearest Nonii</h1>
+    <h1>My Dearest Nonii ♡</h1>
 
     <p class="message">
       Happy Birthday, my love! ❤️
@@ -205,7 +254,7 @@ button:hover {
     </p>
 
     <div class="counter">
-      <h2>Our Little Story ❤️</h2>
+      <h2>Our Little Story ♡</h2>
       <p>Together since October 4, 2026</p>
 
       <br>
@@ -215,17 +264,14 @@ button:hover {
           <strong id="days">0</strong>
           <span>Days</span>
         </div>
-
         <div>
           <strong id="hours">0</strong>
           <span>Hours</span>
         </div>
-
         <div>
           <strong id="minutes">0</strong>
           <span>Minutes</span>
         </div>
-
         <div>
           <strong id="seconds">0</strong>
           <span>Seconds</span>
@@ -234,7 +280,7 @@ button:hover {
     </div>
 
     <p class="footer">
-      Made with love by Eyad ❤️
+      Made with love by Eyad ♡
       <br><br>
       And this is just the beginning...
     </p>
@@ -245,8 +291,13 @@ button:hover {
 
 <script>
 function openLetter() {
-  document.getElementById("welcome").style.display = "none";
+  document.getElementById("intro").style.display = "none";
   document.getElementById("letter").style.display = "block";
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 function updateCounter() {
@@ -269,11 +320,11 @@ function updateCounter() {
 updateCounter();
 setInterval(updateCounter, 1000);
 
-// Floating hearts
 function createHeart() {
   const heart = document.createElement("div");
+
   heart.className = "heart";
-  heart.textContent = "♥";
+  heart.textContent = Math.random() > .5 ? "♥" : "♡";
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.fontSize = (12 + Math.random() * 20) + "px";
   heart.style.animationDuration = (5 + Math.random() * 5) + "s";
@@ -283,7 +334,7 @@ function createHeart() {
   setTimeout(() => heart.remove(), 10000);
 }
 
-setInterval(createHeart, 500);
+setInterval(createHeart, 600);
 </script>
 
 </body>
