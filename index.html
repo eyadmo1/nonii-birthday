@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +53,6 @@ body {
   letter-spacing: 4px;
   font-size: 11px;
   margin-bottom: 30px;
-  animation: appear 2s ease;
 }
 
 .intro-title {
@@ -60,7 +60,6 @@ body {
   font-size: clamp(38px, 10vw, 52px);
   margin-bottom: 18px;
   text-shadow: 0 0 25px #ff9bb566;
-  animation: appear 2.5s ease;
 }
 
 .intro-subtitle {
@@ -68,7 +67,6 @@ body {
   font-size: 16px;
   line-height: 1.8;
   margin-bottom: 40px;
-  animation: appear 3s ease;
 }
 
 .heart-icon {
@@ -125,6 +123,10 @@ h1 {
   margin: 20px 0;
 }
 
+.message strong {
+  color: #ffb6ca;
+}
+
 .counter {
   margin-top: 30px;
   padding: 20px 10px;
@@ -160,10 +162,60 @@ h1 {
   color: #eac3cf;
 }
 
+/* PINKIE PIE */
+
+.pinkie-wrap {
+  width: 145px;
+  height: 165px;
+  margin: 0 auto 12px;
+  position: relative;
+  animation: pinkieBounce 2.5s ease-in-out infinite;
+}
+
+.pinkie-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 15px #ff85b866);
+}
+
+@keyframes pinkieBounce {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-13px) rotate(2deg);
+  }
+}
+
+.pinkie-caption {
+  color: #ffc2d5;
+  font-size: 13px;
+  margin-bottom: 18px;
+  font-style: italic;
+  animation: heartbeat 2s infinite;
+}
+
 .footer {
   margin-top: 30px;
   color: #dca8b8;
   font-size: 13px;
+}
+
+.music-control {
+  position: fixed;
+  z-index: 10;
+  right: 15px;
+  bottom: 15px;
+  background: linear-gradient(135deg, #ffb2c7, #a83d5d);
+  border: 1px solid #ffd1df;
+  border-radius: 30px;
+  padding: 12px 17px;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff8ca855;
 }
 
 .heart {
@@ -198,12 +250,42 @@ h1 {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+@media (max-width: 480px) {
+  .message {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+
+  .pinkie-wrap {
+    width: 125px;
+    height: 145px;
+  }
+
+  .time strong {
+    font-size: 21px;
+  }
+}
 </style>
 </head>
 
 <body>
 
+<!-- MUSIC -->
+<audio id="music" loop preload="auto">
+  <source src="music.m4a" type="audio/mp4">
+</audio>
+
+<button class="music-control" id="musicBtn" onclick="toggleMusic()">
+  ♫ MUSIC OFF
+</button>
+
 <div class="container">
+
+  <!-- INTRO -->
 
   <div id="intro">
 
@@ -227,55 +309,150 @@ h1 {
 
   </div>
 
+  <!-- BIRTHDAY LETTER -->
+
   <div id="letter">
+
+    <div class="pinkie-wrap">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Pinkie_Pie_character.png"
+        alt="Pinkie Pie"
+      >
+    </div>
+
+    <p class="pinkie-caption">
+      Pinkie Pie says: You're special! ♡
+    </p>
 
     <h1>My Dearest Nonii ♡</h1>
 
     <p class="message">
+
       Happy Birthday, my love! ❤️
+
       <br><br>
-      I don't know how to put all my feelings into words,
-      but I want you to know how special you are to me.
+
+      I honestly don't know where to start, because there are so many things I wish I could tell you.
+      But first, I want you to know how grateful I am to have you in my life.
+      You're someone truly special to me, and I hope you never forget that.
+
       <br><br>
-      Every moment with you means something to me.
-      You make ordinary days feel extraordinary,
-      and I'm so grateful that our paths crossed.
+
+      Today is all about you, and I hope you feel as loved, appreciated, and special as you really are.
+      I wish I could make this day as beautiful as your heart.
+
       <br><br>
-      I hope this new year of your life brings you
-      endless happiness, beautiful memories,
-      and everything your heart wishes for.
+
+      I wish you a lifetime full of happiness, success, peace, and love.
+      I hope every dream you've ever had comes true, every goal you've been working for becomes reality,
+      and every little wish in your heart finds its way to you.
+
       <br><br>
-      I hope I get to be part of all those memories.
+
+      I hope you always have reasons to smile, even on the hardest days.
+      I hope life surprises you with beautiful things,
+      gives you opportunities you never expected,
+      and takes you to places you've always dreamed of.
+
       <br><br>
+
+      I wish you success in everything you do.
+      I hope you become everything you've ever wanted to be,
+      and I hope you always feel proud of yourself and everything you achieve.
+      Never underestimate yourself, because you are capable of so many beautiful things.
+
+      <br><br>
+
+      I hope you never lose that beautiful personality of yours,
+      your smile, your little habits, your way of making ordinary moments feel special.
+      Those little things mean more to me than you probably realize.
+
+      <br><br>
+
+      I wish I could be there for every birthday,
+      every celebration, every achievement,
+      every random adventure, and every little moment in between.
+      I want to see you grow, succeed, laugh, and experience everything beautiful life has waiting for you.
+
+      <br><br>
+
+      And whenever life gets difficult,
+      I hope you remember that you don't have to be perfect,
+      you don't have to have everything figured out,
+      and you deserve kindness even on the days when things don't go as planned.
+
+      <br><br>
+
+      I hope I can always be someone who adds happiness to your life,
+      someone you can talk to about anything,
+      someone who listens to your stories,
+      celebrates your little wins,
+      and reminds you how amazing you are.
+
+      <br><br>
+
+      Thank you for being you.
+      Thank you for all the little moments,
+      the conversations, the laughs,
+      and the memories that became special just because they were with you.
+
+      <br><br>
+
+      If there's one thing I wish for this year,
+      it's that life treats you gently,
+      that your heart stays happy,
+      that your dreams get closer every day,
+      and that you receive all the love and happiness you deserve.
+
+      <br><br>
+
       You deserve the whole world, Nonii.
-      Never forget how special you are.
+      And I hope this new chapter of your life is one of the most beautiful ones yet.
+
       <br><br>
-      Forever your Eyad. ❤️
+
+      Happy Birthday once again, my favorite person.
+      I'm so lucky to have you in my story,
+      and I hope we get to create countless beautiful memories together.
+
+      <br><br>
+
+      <strong>Forever your Eyad. ❤️</strong>
+
     </p>
 
+    <!-- COUNTER -->
+
     <div class="counter">
+
       <h2>Our Little Story ♡</h2>
+
       <p>Together since October 4, 2026</p>
 
       <br>
 
       <div class="time">
+
         <div>
           <strong id="days">0</strong>
           <span>Days</span>
         </div>
+
         <div>
           <strong id="hours">0</strong>
           <span>Hours</span>
         </div>
+
         <div>
           <strong id="minutes">0</strong>
           <span>Minutes</span>
         </div>
+
         <div>
           <strong id="seconds">0</strong>
           <span>Seconds</span>
         </div>
+
       </div>
     </div>
 
@@ -283,6 +460,15 @@ h1 {
       Made with love by Eyad ♡
       <br><br>
       And this is just the beginning...
+      <br><br>
+      <small>
+        Pinkie Pie image by Hasbro Australia,
+        <a href="https://creativecommons.org/licenses/by/3.0/"
+           target="_blank"
+           style="color:#ffc2d5;">
+          CC BY 3.0
+        </a>
+      </small>
     </p>
 
   </div>
@@ -290,7 +476,14 @@ h1 {
 </div>
 
 <script>
+
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
+
+let musicPlaying = false;
+
 function openLetter() {
+
   document.getElementById("intro").style.display = "none";
   document.getElementById("letter").style.display = "block";
 
@@ -298,9 +491,40 @@ function openLetter() {
     top: 0,
     behavior: "smooth"
   });
+
+  music.play().then(() => {
+    musicPlaying = true;
+    musicBtn.textContent = "♫ MUSIC ON";
+  }).catch(() => {
+    musicPlaying = false;
+    musicBtn.textContent = "♫ TAP TO PLAY";
+  });
 }
 
+function toggleMusic() {
+
+  if (musicPlaying) {
+
+    music.pause();
+    musicPlaying = false;
+    musicBtn.textContent = "♫ MUSIC OFF";
+
+  } else {
+
+    music.play().then(() => {
+      musicPlaying = true;
+      musicBtn.textContent = "♫ MUSIC ON";
+    }).catch(() => {
+      musicBtn.textContent = "♫ TRY AGAIN";
+    });
+
+  }
+}
+
+// COUNTER
+
 function updateCounter() {
+
   const startDate = new Date("2026-10-04T00:00:00");
   const now = new Date();
 
@@ -320,7 +544,10 @@ function updateCounter() {
 updateCounter();
 setInterval(updateCounter, 1000);
 
+// FLOATING HEARTS
+
 function createHeart() {
+
   const heart = document.createElement("div");
 
   heart.className = "heart";
@@ -335,6 +562,7 @@ function createHeart() {
 }
 
 setInterval(createHeart, 600);
+
 </script>
 
 </body>
